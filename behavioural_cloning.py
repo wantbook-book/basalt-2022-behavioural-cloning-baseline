@@ -20,19 +20,25 @@ from openai_vpt.lib.tree_util import tree_map
 # Originally this code was designed for a small dataset of ~20 demonstrations per task.
 # The settings might not be the best for the full BASALT dataset (thousands of demonstrations).
 # Use this flag to switch between the two settings
-USING_FULL_DATASET = True
+# USING_FULL_DATASET = True
+USING_FULL_DATASET = False
 
 EPOCHS = 1 if USING_FULL_DATASET else 2
 # Needs to be <= number of videos
-BATCH_SIZE = 64 if USING_FULL_DATASET else 16
+# BATCH_SIZE = 64 if USING_FULL_DATASET else 16
+BATCH_SIZE = 8
+
 # Ideally more than batch size to create
 # variation in datasets (otherwise, you will
 # get a bunch of consecutive samples)
 # Decrease this (and batch_size) if you run out of memory
-N_WORKERS = 100 if USING_FULL_DATASET else 20
-DEVICE = "cuda"
+# N_WORKERS = 100 if USING_FULL_DATASET else 20
+N_WORKERS = 8
+# DEVICE = "cuda"
+DEVICE = "cpu"
 
-LOSS_REPORT_RATE = 100
+# LOSS_REPORT_RATE = 100
+LOSS_REPORT_RATE = 2
 
 # Tuned with bit of trial and error
 LEARNING_RATE = 0.000181
