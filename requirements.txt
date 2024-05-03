@@ -1,0 +1,12 @@
+torch
+#git+https://github.com/minerllabs/minerl
+tqdm
+gym
+opencv-python
+# opencv-python-headless 可能需要
+coloredlogs
+matplotlib
+aicrowd-api
+aicrowd-gym
+gym3
+attrs
